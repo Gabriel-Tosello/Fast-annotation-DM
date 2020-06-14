@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAnnotation</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/estilo2.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<body>
+
+    <button class="btn_menu"><img src="img/cardapioazul.png"></button>
+    <nav class="menu">
+        <a class="btn_close"><img src="img/cardapiopreto.png"></a>
+        <br><br>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="criarAnotacao.html">Criar uma anotação</a></li><img src="img/Note01.PNG">
+            <li><a href="listagemAnotacoes.html">Anotações</a></li><img src="img/Note02.png">
+            <li><a href="googleMaps.html">GoogleMaps</a></li>
+        </ul>
+    </nav>
+
+    <br><br><br>
+    <form></form>
+        <div class="anotacoes_div" id="task_wrapper">                           
+        </div>    
+
+</body>
+<script src="js/dbListar.js"></script>
+<script src="js/jquery-3.4.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    // Pegar id da div clicada ---------------
+        
+        //----------------------------------------
+    var descendentes = document.querySelectorAll("#task_wrapper button");
+        for (var i = 0; i < descendentes.length; i++) {
+            descendentes[i].addEventListener("click", function (e) {
+                localStorage.setItem("PAnotacao",this.id);
+                //alert('O elemento clicado foi o ' + this.id);
+            })
+        }
+
+    $(".btn_menu").click(function abrirMenu() {
+
+        $(".menu").show();
+
+    })
+
+    $(".btn_close").click(function fecharMenu() {
+
+        $(".menu").hide();
+
+    })
+
+    $(".quadrado_anotacao").click(function(){ 
+        window.open('visualizarAnotacao.html', '_self');
+    });
+
+    $('.cancelar').click(function(){
+        window.location.href = "index.html";
+    });
+</script>
+
+</html>

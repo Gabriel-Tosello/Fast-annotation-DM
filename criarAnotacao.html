@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAnnotation</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/estilo2.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+</head>
+<body>
+
+    <button class="btn_menu"><img src="img/cardapioazul.png"></button>
+    <nav class="menu">
+        <a class="btn_close"><img src="img/cardapiopreto.png"></a>
+        <br><br>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="criarAnotacao.html">Criar uma anotação</a></li><img src="img/Note01.PNG">
+            <li><a href="listagemAnotacoes.html">Anotações</a></li><img src="img/Note02.png">
+            <li><a href="googleMaps.html">GoogleMaps</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+
+        <div class="lista">
+            <br>
+
+            <form onsubmit="salvarAnotacao()" action="" method="post">
+        
+                <h4>Digite um Nome:</h4>
+        
+                <input class="areatexto2 form-control" name="" id="nome">
+
+                <h4>Digite uma descrição:</h4>
+
+                <textarea class="areatexto2 form-control" name="" id="descricao" cols="30" rows="1"></textarea>
+
+                <h4>Digite o conteúdo:</h4>
+
+                <textarea class="areatexto3 form-control" name="" id="conteudo" cols="30" rows="7"></textarea>
+
+                <div class="botoes">
+
+                    <div>
+                        
+                        <button id="save_task" class="button2" type="button"> Criar anotação</button>
+
+                    </div>
+                
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+
+<script src="js/jquery-3.4.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+
+    $(".btn_menu").click(function abrirMenu() {
+
+        $(".menu").show();
+
+    })
+
+    $(".btn_close").click(function fecharMenu() {
+
+    $(".menu").hide();
+
+    })
+
+    $(".negrito").click(function () {
+        $(".areatexto3").toggleClass(".negrito");
+    });
+
+    $(".italico").click(function () {
+        $(".areatexto3").toggleClass(".italico");
+    });
+
+    $(".sublinhado").click(function () {
+        $(".areatexto3").toggleClass(".sublinhado");
+    });
+
+    $('.cancelar').click(function(){
+        window.location.href = "index.html";
+    });
+</script>
+<script src="js/db.js"></script>
+</html>
